@@ -8,7 +8,7 @@
 
 class Variable {
   private:
-    std::vector<Noed> _listeVar;
+    std::vector<Node> _listeVar;
     char _caractere;
 
   public:
@@ -17,5 +17,5 @@ class Variable {
     void retenues();
     int estimationSommeMax(std::vector<std::string> listeMots,
                            std::string motResultat);
-    void ajouteVariable(Noed n);
+    void ajouteVariable(Node n);
 };

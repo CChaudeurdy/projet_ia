@@ -1,6 +1,6 @@
 #pragma once
 
-struct Noed {
+struct Node {
   public:
     int valeur;
     char var;

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "noed.h"
+#include "node.h"
 
 #include <vector>
 
@@ -8,8 +8,8 @@ class Domain {
   public:
     Domain();
     void ajouteDomain();
-    std::vector<Noed> getDomain();
+    std::vector<Node> getDomain();
 
   private:
-    std::vector<Noed> _listeDomain;
+    std::vector<Node> _listeDomain;
 };
