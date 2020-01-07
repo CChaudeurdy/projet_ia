@@ -1,19 +1,20 @@
-#include "variable.hh"
+#include "variable.h"
+
 #include <vector>
 
-Variable::Variable(){}
+Variable::Variable() {}
 
-int Variable::estimationSommeMax(std::vector<std::string> listeMots, std::string motResultat){
-    int sizeMotresultat =motResultat.size();
-    int differenceMin=0;
-    for(auto const elem: listeMots){
-       int diff = sizeMotresultat-elem.size();
-       if (diff<0){
-           return -1;
-       }
-       if()
+int Variable::estimationSommeMax(std::vector<std::string> listeMots,
+                                 std::string motResultat) {
+    int sizeMotresultat = motResultat.size();
+    int differenceMin = 0;
+    for (auto const elem : listeMots) {
+        int diff = sizeMotresultat - elem.size();
+        if (diff < 0) {
+            return -1;
+        }
+        // if ()
     }
-    
 }
 
 // function check for correct solution
@@ -69,11 +70,9 @@ int Variable::check(std::vector<variable>, const int count, string s1,
     return 0;
 } */
 
-
-
-
 /*
-Pour résoudre ce genre de problème il est possible de le formuler comme une CSP (Constraint Satisfaction Problem) pour lequel on doit définir :
+Pour résoudre ce genre de problème il est possible de le formuler comme une CSP
+(Constraint Satisfaction Problem) pour lequel on doit définir :
 
 des domaines de valeurs : D={d1,...,dm}
 des variables : V={v1,...,vn}
@@ -92,6 +91,3 @@ c4 (addition) : R3+S+M=O+10×R4
 c5 (égalité) : R4=M
 c6 (alldiff) : S,E,N,D,M,O,R,Y
 */
-
-
-

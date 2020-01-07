@@ -8,21 +8,17 @@ using namespace std;
 vector<int> use(10);
 
 // structure to store char and its corresponding integer
-struct node
-{
+struct node {
     char c;
     int v;
 };
 
 // function check for correct solution
-int check(node* nodeArr, const int count, string s1,
-                            string s2, string s3)
-{
+int check(node *nodeArr, const int count, string s1, string s2, string s3) {
     int val1 = 0, val2 = 0, val3 = 0, m = 1, j, i;
 
     // calculate number corresponding to first string
-    for (i = s1.length() - 1; i >= 0; i--)
-    {
+    for (i = s1.length() - 1; i >= 0; i--) {
         char ch = s1[i];
         for (j = 0; j < count; j++)
             if (nodeArr[j].c == ch)
@@ -34,8 +30,7 @@ int check(node* nodeArr, const int count, string s1,
     m = 1;
 
     // calculate number corresponding to second string
-    for (i = s2.length() - 1; i >= 0; i--)
-    {
+    for (i = s2.length() - 1; i >= 0; i--) {
         char ch = s2[i];
         for (j = 0; j < count; j++)
             if (nodeArr[j].c == ch)
@@ -47,8 +42,7 @@ int check(node* nodeArr, const int count, string s1,
     m = 1;
 
     // calculate number corresponding to third string
-    for (i = s3.length() - 1; i >= 0; i--)
-    {
+    for (i = s3.length() - 1; i >= 0; i--) {
         char ch = s3[i];
         for (j = 0; j < count; j++)
             if (nodeArr[j].c == ch)
@@ -67,31 +61,25 @@ int check(node* nodeArr, const int count, string s1,
 }
 
 // Recursive function to check solution for all permutations
-bool permutation(const int count, node* nodeArr, int n,
-                string s1, string s2, string s3)
-{
+bool permutation(const int count, node *nodeArr, int n, string s1, string s2,
+                 string s3) {
     // Base case
-    if (n == count - 1)
-    {
+    if (n == count - 1) {
 
         // check for all numbers not used yet
-        for (int i = 0; i < 10; i++)
-        {
+        for (int i = 0; i < 10; i++) {
 
             // if not used
-            if (use[i] == 0)
-            {
+            if (use[i] == 0) {
 
                 // assign char at index n integer i
                 nodeArr[n].v = i;
 
                 // if solution found
-                if (check(nodeArr, count, s1, s2, s3) == 1)
-                {
+                if (check(nodeArr, count, s1, s2, s3) == 1) {
                     cout << "\nSolution found: ";
                     for (int j = 0; j < count; j++)
-                        cout << " " << nodeArr[j].c << " = "
-                            << nodeArr[j].v;
+                        cout << " " << nodeArr[j].c << " = " << nodeArr[j].v;
                     return true;
                 }
             }
@@ -99,12 +87,10 @@ bool permutation(const int count, node* nodeArr, int n,
         return false;
     }
 
-    for (int i = 0; i < 10; i++)
-    {
+    for (int i = 0; i < 10; i++) {
 
         // if ith integer not used yet
-        if (use[i] == 0)
-        {
+        if (use[i] == 0) {
 
             // assign char at index n integer i
             nodeArr[n].v = i;
@@ -123,9 +109,7 @@ bool permutation(const int count, node* nodeArr, int n,
     return false;
 }
 
-bool solveCryptographic(string s1, string s2,
-                                string s3)
-{
+bool solveCryptographic(string s1, string s2, string s3) {
     // count to store number of unique char
     int count = 0;
 
@@ -152,8 +136,7 @@ bool solveCryptographic(string s1, string s2,
             count++;
 
     // solution not possible for count greater than 10
-    if (count > 10)
-    {
+    if (count > 10) {
         cout << "Invalid strings";
         return 0;
     }
@@ -162,10 +145,8 @@ bool solveCryptographic(string s1, string s2,
     node nodeArr[count];
 
     // store all unique char in nodeArr
-    for (int i = 0, j = 0; i < 26; i++)
-    {
-        if (freq[i] > 0)
-        {
+    for (int i = 0, j = 0; i < 26; i++) {
+        if (freq[i] > 0) {
             nodeArr[j].c = char(i + 'A');
             j++;
         }
@@ -174,8 +155,7 @@ bool solveCryptographic(string s1, string s2,
 }
 
 // Driver function
-int main()
-{
+int main() {
     string s1 = "UN";
     string s2 = "NEUF";
     string s4 = "UN";
