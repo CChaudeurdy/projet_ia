@@ -7,3 +7,6 @@ META-INF/
 .project
 .settings
 .factorypath)
+*.pro
+*.pro.user
+.clang-format
